@@ -17,7 +17,7 @@ const getNoteById = (req, res) => {
 };
 
 const updateNoteById = (req, res) => {
-  const { id } = req.parmas;
+  const { id } = req.params;
   const { body } = req;
   const notes = getFromDb();
   const note = notes[id];
