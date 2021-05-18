@@ -10,6 +10,6 @@ const router = Router();
 
 router.get("/notes", getNotes);
 router.get("/notes/:id", getNoteById);
-router.put("/notes.:id", updateNoteById);
+router.put("/notes/:id", updateNoteById);
 
 module.exports = router;

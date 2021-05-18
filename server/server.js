@@ -17,9 +17,12 @@ const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(__dirname + "../public"));
+app.use(express.static("./"));
 app.use("/", htmlRoutes);
 app.use("/api", apiRoutes);
+
+console.log(__dirname + "/public");
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
