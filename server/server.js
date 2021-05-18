@@ -1,16 +1,19 @@
 // node dependencies
 const express = require("express");
-const path = require("path");
+const cors = require("cors");
 
-const directoryPath = path.resolve(__dirname);
-
-// this initializes the express app and sets the port
-const app = express();
+// sets the port
 const PORT = 8000;
 
+// this initializes the express app
+const app = express();
+
+// Middleware
+
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static(directoryPath));
+app.use(express.json({ extended: true }));
+app.use(express.static("public"));
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
