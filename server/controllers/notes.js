@@ -1,5 +1,6 @@
 const getFromDb = require("../utils/getFromDb");
 const writeToDb = require("../utils/writeToDb");
+const { v4: uuid } = require("uuid");
 
 const getNotes = (req, res) => {
   const notes = getFromDb();
@@ -17,19 +18,26 @@ const getNoteById = (req, res) => {
 };
 
 const updateNoteById = (req, res) => {
-  const { id } = req.params;
-  const { body } = req;
+  const { body } = req.body;
+  const { id } = uuidv4();
   const notes = getFromDb();
   const note = notes[id];
   const newNote = {
-    ...note,
     ...body,
+    ...note,
+    ...id,
   };
 
   const newNotes = {
     ...notes,
     [id]: newNote,
   };
+
+  console.log(id, "1");
+  console.log(notes, "2");
+  console.log(note, "3");
+  console.log(newNote, "4");
+  console.log(newNotes, "5");
 
   writeToDb(JSON.stringify(newNotes));
 

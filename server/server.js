@@ -20,8 +20,6 @@ app.use(express.static("public"));
 app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
 
-console.log(__dirname + "/public");
-
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
 });
