@@ -9,9 +9,8 @@ const {
 const router = Router();
 
 router.get("/notes", getNotes);
+router.post("/notes", updateNoteById);
 router.get("/notes/:id", getNoteById);
-router.put("/notes/:id", () => {
-  console.log("see if i=hits");
-});
+router.put("/notes/:id", updateNoteById);
 
 module.exports = router;
