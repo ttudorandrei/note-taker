@@ -1,6 +1,6 @@
 const getFromDb = require("../utils/getFromDb");
 const writeToDb = require("../utils/writeToDb");
-const { v4: uuid } = require("uuid");
+const { v4: uuidv4 } = require("uuid");
 
 const getNotes = (req, res) => {
   const notes = getFromDb();
@@ -18,8 +18,8 @@ const getNoteById = (req, res) => {
 };
 
 const updateNoteById = (req, res) => {
-  const { body } = req.body;
-  const { id } = uuidv4();
+  const { body } = req;
+  const { id } = uuidv4;
   const notes = getFromDb();
   const note = notes[id];
   const newNote = {
