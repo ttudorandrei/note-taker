@@ -9,7 +9,7 @@ const getNotes = (req, res) => {
 };
 
 const getNoteById = (req, res) => {
-  const { id } = req.params;
+  const { id } = req;
   const notes = getFromDb();
 
   const note = notes[id];
@@ -19,13 +19,11 @@ const getNoteById = (req, res) => {
 
 const updateNoteById = (req, res) => {
   const { body } = req;
-  const { id } = uuidv4;
+  const id = uuidv4();
   const notes = getFromDb();
-  const note = notes[id];
   const newNote = {
     ...body,
-    ...note,
-    ...id,
+    id: id,
   };
 
   const newNotes = {
@@ -35,9 +33,8 @@ const updateNoteById = (req, res) => {
 
   console.log(id, "1");
   console.log(notes, "2");
-  console.log(note, "3");
-  console.log(newNote, "4");
-  console.log(newNotes, "5");
+  console.log(newNote, "3");
+  console.log(newNotes, "4");
 
   writeToDb(JSON.stringify(newNotes));
 
