@@ -11,6 +11,6 @@ const router = Router();
 router.get("/notes", getNotes);
 router.post("/notes", updateNoteById);
 router.get("/notes/:id", getNoteById);
-router.post("/notes/:id", updateNoteById);
+router.put("/notes/:id", updateNoteById);
 
 module.exports = router;
