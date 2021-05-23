@@ -39,11 +39,6 @@ const updateNoteById = (req, res) => {
     [id]: newNote,
   };
 
-  console.log(id, "1");
-  console.log(notes, "2");
-  console.log(newNote, "3");
-  console.log(newNotes, "4");
-
   // writes the new data to the db.json file
   writeToDb(JSON.stringify(newNotes));
 
