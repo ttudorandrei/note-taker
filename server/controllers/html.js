@@ -1,5 +1,5 @@
 // dependencies
-const getStaticFilePath = require("../utils/peter");
+const getStaticFilePath = require("../utils/getStaticFile");
 
 // this creates the filepath for index.html
 const renderHomePage = (req, res) => {
