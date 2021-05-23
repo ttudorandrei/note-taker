@@ -2,7 +2,7 @@
 const path = require("path");
 
 // this would return the file path for the static files
-const getStaticFilePath = (fileName) => {
+const getStaticFile = (fileName) => {
   try {
     // dynamically builds the path for the static files
     const filePath = path.join(__dirname, "../../public", `/${fileName}.html`);
@@ -12,4 +12,4 @@ const getStaticFilePath = (fileName) => {
   }
 };
 
-module.exports = getStaticFilePath;
+module.exports = getStaticFile;
