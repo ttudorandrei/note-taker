@@ -34,10 +34,7 @@ const updateNoteById = (req, res) => {
   };
 
   // adds the old notes plus the newly created one and adds the id as a key
-  const newNotes = {
-    ...notes,
-    [id]: newNote,
-  };
+  const newNotes = [...notes, newNote];
 
   // writes the new data to the db.json file
   writeToDb(JSON.stringify(newNotes));
