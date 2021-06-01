@@ -21,7 +21,7 @@ const getNoteById = (req, res) => {
 };
 
 // creates a new not and adds an id so it can be targeted by id
-const updateNoteById = (req, res) => {
+const postNoteById = (req, res) => {
   const { body } = req;
   // generates random id
   const id = uuidv4();
@@ -45,5 +45,5 @@ const updateNoteById = (req, res) => {
 module.exports = {
   getNotes,
   getNoteById,
-  updateNoteById,
+  postNoteById,
 };
