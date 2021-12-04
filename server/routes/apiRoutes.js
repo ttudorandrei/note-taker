@@ -1,7 +1,7 @@
 // deconstructs router from express
 const { Router } = require("express");
 
-// deconstructs the functions needed for the api routes
+// deconstructing the functions needed for the api routes
 const { getNotes, postNoteById } = require("../controllers/notes");
 
 const router = Router();

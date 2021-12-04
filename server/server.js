@@ -9,7 +9,7 @@ const apiRoutes = require("./routes/apiRoutes");
 // sets the port
 const PORT = process.env.PORT || 3000;
 
-// this initializes the express app
+// this will initialize the express app
 const app = express();
 
 // Middleware
